@@ -11,10 +11,11 @@ public abstract class Pet {
     private boolean happy;
     private boolean dead;
 
-    private final int MIN_AGE = Integer.parseInt(Config.getProp("minAge"));
-    private final int MAX_AGE = Integer.parseInt(Config.getProp("maxAge"));
-    private final int MIN_FULLNESS = Integer.parseInt(Config.getProp("minFullness"));
-    private final int MAX_FULLNESS = Integer.parseInt(Config.getProp("maxFullness"));
+    protected String MIN_AGE = Config.getProp("minAge");
+    protected String MAX_AGE = Config.getProp("maxAge");
+    protected String MIN_FULLNESS = Config.getProp("minFullness");
+    protected String MAX_FULLNESS = Config.getProp("maxFullness");
+
 
     public String getUrl() {
         return url;

@@ -14,7 +14,7 @@ public class Lifecycle {
 
         try (ObjectOutputStream objectOutputStream =
                      new ObjectOutputStream(
-                             new FileOutputStream("save.ser"))) {
+                             new FileOutputStream("save.txt"))) {
 
             objectOutputStream.writeObject(pet);
 
@@ -25,12 +25,12 @@ public class Lifecycle {
 
     public Pet loadPet() {
 
-        File saveFile = new File("save.ser");
+        File saveFile = new File("save.txt");
 
         if (saveFile.exists()) {
             try (ObjectInputStream objectInputStream =
                          new ObjectInputStream(
-                                 new FileInputStream("save.ser"))) {
+                                 new FileInputStream("save.txt"))) {
 
                 return (Pet) objectInputStream.readObject();
 

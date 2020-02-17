@@ -44,7 +44,7 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <Button layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewLion" prefHeight="260.0" prefWidth="199.0">
+            <Button fx:id="createNewLionButton" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewLion" prefHeight="260.0" prefWidth="199.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -59,7 +59,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="199.0" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewDuck" prefHeight="260.0" prefWidth="199.0">
+            <Button fx:id="createNewDuckButton" layoutX="199.0" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewDuck" prefHeight="260.0" prefWidth="199.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -74,7 +74,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="401.0" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewHomer" prefHeight="260.0" prefWidth="199.0">
+            <Button fx:id="createNewHomerButton" layoutX="401.0" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewHomer" prefHeight="260.0" prefWidth="199.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -89,7 +89,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="600.0" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewTerminator" prefHeight="260.0" prefWidth="199.0">
+            <Button fx:id="createNewTerminatorButton" layoutX="600.0" layoutY="91.0" maxHeight="260.0" maxWidth="199.0" minHeight="260.0" minWidth="199.0" mnemonicParsing="false" onMouseClicked="#createNewTerminator" prefHeight="260.0" prefWidth="199.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

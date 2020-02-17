@@ -11,6 +11,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" hgap="10" prefHeight="137.0" prefWidth="333.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.rom.tamagotchi.controllers.LivingScreenController">
    <columnConstraints>
@@ -20,8 +23,10 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane minHeight="640.0" minWidth="800.0">
+      <AnchorPane fx:id="anchorPane" minHeight="640.0" minWidth="800.0">
          <children>
+            <Rectangle fx:id="skyBox" arcHeight="5.0" arcWidth="5.0" fill="#066bc9" height="522.0" layoutX="9.0" layoutY="33.0" opacity="0.26" stroke="BLACK" strokeType="INSIDE" width="783.0" />
+            <Circle fx:id="sun" fill="#f2e611" layoutX="200.0" layoutY="505.0" radius="50.0" strokeType="INSIDE" />
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="800.0">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
@@ -37,7 +42,7 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <ImageView fitHeight="535.0" fitWidth="783.0" layoutX="9.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="background" accessibleRole="PARENT" fitHeight="535.0" fitWidth="783.0" layoutX="9.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/Background1.png" />
                </image>
@@ -45,12 +50,20 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Button layoutX="9.0" layoutY="573.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="156.0" text="Button" />
-            <Button layoutX="178.0" layoutY="573.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="156.0" text="Button" />
+            <Button fx:id="feed" layoutX="9.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#feed" prefHeight="53.0" prefWidth="156.0" text="Покормить">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button layoutX="178.0" layoutY="573.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="156.0" text="Поиграть" />
             <Button layoutX="345.0" layoutY="573.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="156.0" text="Button" />
             <Button layoutX="514.0" layoutY="573.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="156.0" text="Button" />
             <Button layoutX="726.0" layoutY="573.0" mnemonicParsing="false" text="Button" />
             <Button layoutX="726.0" layoutY="600.0" mnemonicParsing="false" text="Button" />
+            <ImageView fx:id="characterPic" fitHeight="150.0" fitWidth="200.0" layoutX="514.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/1_Lion/2_Lion_walks.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
