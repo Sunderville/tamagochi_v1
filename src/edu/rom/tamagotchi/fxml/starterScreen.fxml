@@ -54,7 +54,7 @@
                <graphic>
                   <ImageView fitHeight="200.0" fitWidth="200.0">
                      <image>
-                        <Image url="@../images/1_Lion/1_Lion_logo.png" />
+                        <Image url="@../images/Lion/1_Lion_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -69,7 +69,7 @@
                <graphic>
                   <ImageView fitHeight="200.0" fitWidth="185.0">
                      <image>
-                        <Image url="@../images/2_Duck/1_Duck_logo.png" />
+                        <Image url="@../images/Duck/1_Duck_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -84,7 +84,7 @@
                <graphic>
                   <ImageView fitHeight="200.0" fitWidth="116.0">
                      <image>
-                        <Image url="@../images/3_Simpson/1_Homer_logo.png" />
+                        <Image url="@../images/Homer/1_Homer_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -99,7 +99,7 @@
                <graphic>
                   <ImageView fitHeight="200.0" fitWidth="151.0">
                      <image>
-                        <Image url="@../images/4_Terminator/1_Terminator_logo.png" />
+                        <Image url="@../images/Terminator/1_Terminator_logo.png" />
                      </image>
                   </ImageView>
                </graphic>
