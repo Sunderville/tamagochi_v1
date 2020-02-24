@@ -40,8 +40,8 @@ class LivingScreenController {
     private Pet pet;
     private final double PICTURE_GROWING_RATE = 0.01;
     private final int NUMBER_OF_CYCLES = 2;          //
-    private final int WALKING_SPEED = 5;             // in seconds;  more is slower
-    private final int CYCLE_LENGTH = 5;              // in seconds
+    private final int WALKING_SPEED = 10;             // in seconds;  more is slower
+    private final int CYCLE_LENGTH = 20;              // in seconds
 
     LivingScreenController() {
     }
@@ -102,22 +102,21 @@ class LivingScreenController {
             System.out.println("increased happiness: " + pet.getHappiness()); //for checkout
             final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
-            ImageView game = new ImageView(new Image("edu/rom/tamagotchi/images/Games/" + pet.getClass().getSimpleName() + "_game.png"));
+            ImageView game = new ImageView(new Image("/edu/rom/tamagotchi/images/Games/" + pet.getClass().getSimpleName() + "_game.png"));
             anchorPane.getChildren().add(game);
             game.setX(550);
             game.setY(100);
             executorService.schedule(() -> game.setVisible(false), 2, TimeUnit.SECONDS);
 
-            changeImage("edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/3_" + pet.getClass().getSimpleName() + "_content.png", characterPic);
+            changeImage("/edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/3_" + pet.getClass().getSimpleName() + "_content.png", characterPic);
             setScaleFittedForAge(PICTURE_GROWING_RATE);
             if (pet.getHappiness() > 3){
-                executorService.schedule(() -> changeImage("edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/2_" + pet.getClass().getSimpleName() + "_walks.png", characterPic), 2, TimeUnit.SECONDS);
+                executorService.schedule(() -> changeImage("/edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/2_" + pet.getClass().getSimpleName() + "_walks.png", characterPic), 2, TimeUnit.SECONDS);
             } else {
-                executorService.schedule(() -> changeImage("edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/4_" + pet.getClass().getSimpleName() + "_sick.png", characterPic), 2, TimeUnit.SECONDS);
+                executorService.schedule(() -> changeImage("/edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/4_" + pet.getClass().getSimpleName() + "_sick.png", characterPic), 2, TimeUnit.SECONDS);
                 setScaleFittedForAge(PICTURE_GROWING_RATE);
             }
         }
-//        setRateNumbers();
     }
 
     @FXML
@@ -144,7 +143,6 @@ class LivingScreenController {
                 setScaleFittedForAge(PICTURE_GROWING_RATE);
             }
         }
-//        setRateNumbers();
     }
 
     @FXML
@@ -185,8 +183,8 @@ class LivingScreenController {
         IndicatorsControl indicatorsControl = new IndicatorsControl();
         GettingOlder gettingOlder = new GettingOlder();
         BecomingDead becomingDead = new BecomingDead();
-        numbers = new Numbers();
         lifecycle = new LifeCycle();
+        numbers = new Numbers();
 
         changeImage("edu/rom/tamagotchi/images/" + pet.getClass().getSimpleName() + "/2_" + pet.getClass().getSimpleName() + "_walks.png", characterPic);
         setScaleFittedForAge(PICTURE_GROWING_RATE);
@@ -223,10 +221,10 @@ class LivingScreenController {
         gettingOlder.start();
 
         //TODO:
-        // - debug Indicators features (response below 2)
-        // - button "walking/stop"
         // - solve "stage.showAndWait();" exception flickering issue (ScenesOperator: 28)
-        // -
+        // - button "walking/stop"
+        // - more synchronized flip
+        // - find a way to use .properties file
 
     }
 
@@ -238,6 +236,7 @@ class LivingScreenController {
         characterPic.setScaleX(1.0 + ((double) pet.getAge() * v));
         characterPic.setScaleY(1.0 + ((double) pet.getAge() * v));
     }
+
 
     private class EnvironmentAnimation {
 
@@ -266,7 +265,7 @@ class LivingScreenController {
 
         private void skyDimming() {
             FadeTransition skyDimming = new FadeTransition(Duration.millis(CYCLE_LENGTH * 1000), skyBox);
-            skyDimming.setFromValue(4.0);
+            skyDimming.setFromValue(6.0);
             skyDimming.setToValue(0.1);
             skyDimming.setAutoReverse(true);
             skyDimming.setCycleCount(NUMBER_OF_CYCLES);

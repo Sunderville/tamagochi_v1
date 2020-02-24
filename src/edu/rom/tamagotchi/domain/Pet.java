@@ -16,9 +16,9 @@ public abstract class Pet {
     protected final int MAX_FULLNESS = 10;
     protected final int MIN_HAPPINESS = 0;
     protected final int MAX_HAPPINESS = 20;
-    protected final int AGING_STEP = 3;             // in seconds
-    protected final int HUNGRINESS_STEP = 3;        // in seconds
-    protected final int FREEZE_AFTER_DEATH = 40;    // in seconds
+    protected final int AGING_STEP = 8;             // in seconds
+    protected final int HUNGRINESS_STEP = 5;        // in seconds
+    protected final int FREEZE_AFTER_DEATH = 60;    // in seconds
 
     protected Pet() {
     }

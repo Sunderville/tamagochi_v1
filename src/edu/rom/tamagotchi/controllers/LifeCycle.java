@@ -58,6 +58,22 @@ class LifeCycle {
         }
     }
 
+    long calculateTheoreticalDeathTime(Pet pet) {
+        if (pet.getDeathMoment() == 0) {
+            pet.setAge((int) (pet.getAge() + (System.currentTimeMillis() - pet.getShuttingDownMoment()) / (pet.getAGING_STEP()*1000)));
+            pet.setFullness((int) (pet.getFullness() - (System.currentTimeMillis() - pet.getShuttingDownMoment()) / (pet.getHUNGRINESS_STEP()*1000)));
+            pet.setHappiness((int) (pet.getHappiness() - (System.currentTimeMillis() - pet.getShuttingDownMoment()) / (pet.getHUNGRINESS_STEP()*1000)));
+            long ageDeathInTheory = pet.getShuttingDownMoment() + ((pet.getMAX_AGE() - pet.getAge()) * (pet.getAGING_STEP() * 1000));
+            long hungryDeathInTheory = pet.getShuttingDownMoment() + (pet.getFullness() * (pet.getHUNGRINESS_STEP() * 1000));
+            long sadDeathInTheory = pet.getShuttingDownMoment() + (pet.getHappiness() * (pet.getHUNGRINESS_STEP() * 1000));
+            long temp = ageDeathInTheory < hungryDeathInTheory ? ageDeathInTheory : hungryDeathInTheory;
+            long theoreticalDeathMoment = temp < sadDeathInTheory ? temp : sadDeathInTheory;
+            return theoreticalDeathMoment;
+        } else {
+            return pet.getDeathMoment();
+        }
+    }
+
     private Pet createPetForClassName(String className) {
         Pet pet;
         switch (className) {
@@ -77,19 +93,4 @@ class LifeCycle {
         return pet;
     }
 
-    long calculateTheoreticalDeathTime(Pet pet) {
-        if (pet.getDeathMoment() == 0) {
-            pet.setAge((int) (pet.getAge() + (System.currentTimeMillis() - pet.getShuttingDownMoment()) / (pet.getAGING_STEP()*1000)));
-            pet.setFullness((int) (pet.getFullness() - (System.currentTimeMillis() - pet.getShuttingDownMoment()) / (pet.getHUNGRINESS_STEP()*1000)));
-            pet.setHappiness((int) (pet.getHappiness() - (System.currentTimeMillis() - pet.getShuttingDownMoment()) / (pet.getHUNGRINESS_STEP()*1000)));
-            long ageDeathInTheory = pet.getShuttingDownMoment() + ((pet.getMAX_AGE() - pet.getAge()) * (pet.getAGING_STEP() * 1000));
-            long hungryDeathInTheory = pet.getShuttingDownMoment() + (pet.getFullness() * (pet.getHUNGRINESS_STEP() * 1000));
-            long sadDeathInTheory = pet.getShuttingDownMoment() + (pet.getHappiness() * (pet.getHUNGRINESS_STEP() * 1000));
-            long temp = ageDeathInTheory < hungryDeathInTheory ? ageDeathInTheory : hungryDeathInTheory;
-            long theoreticalDeathMoment = temp < sadDeathInTheory ? temp : sadDeathInTheory;
-            return theoreticalDeathMoment;
-        } else {
-            return pet.getDeathMoment();
-        }
-    }
 }

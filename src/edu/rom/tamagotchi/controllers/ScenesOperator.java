@@ -25,7 +25,7 @@ class ScenesOperator {
         }
         Parent root = fxmlLoader.getRoot();
         stage.setScene(new Scene(root));
-        stage.showAndWait();
+        stage.showAndWait();  // sometimes causes an exception during animation (flickering bug)
     }
 
     void showAboutWindow() {
