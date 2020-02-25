@@ -38,8 +38,8 @@ class LivingScreenController {
     private LifeCycle lifecycle;
     private Stage stageF;
     private Pet pet;
-    private final double PICTURE_GROWING_RATE = 0.01;
-    private final int NUMBER_OF_CYCLES = 2;          //
+    private final double PICTURE_GROWING_RATE = 0.01; // 0.01 = 1%
+    private final int NUMBER_OF_CYCLES = 2;           //
     private final int WALKING_SPEED = 10;             // in seconds;  more is slower
     private final int CYCLE_LENGTH = 20;              // in seconds
 
@@ -389,6 +389,7 @@ class LivingScreenController {
             };
         }
     }
+
 
     class GettingHungryAndBoringToDeath extends Service {
         @Override

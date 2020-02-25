@@ -57,24 +57,24 @@
                         <Image url="@../images/Lion/5_Lion_dead.png" />
                     </image>
                 </ImageView>
-            <Text layoutX="211.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Друг, ради Господа, не рой">
+            <Text layoutX="197.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD FRIEND FOR JESUS SAKE FORBEAR">
                <font>
-                  <Font name="Monotype Corsiva" size="22.0" />
+                  <Font name="Nyala" size="20.0" />
                </font>
             </Text>
-            <Text layoutX="250.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Останков, взятых сей землей;">
+            <Text layoutX="258.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TO DIG THE DUST ENCLOSED HERE.">
                <font>
-                  <Font name="Monotype Corsiva" size="22.0" />
+                  <Font name="Nyala" size="20.0" />
                </font>
             </Text>
-            <Text layoutX="271.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      Нетронувший блажен в веках,">
+            <Text layoutX="274.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BLESSED BE YE MAN WHO SPARES THES STONES,">
                <font>
-                  <Font name="Monotype Corsiva" size="22.0" />
+                  <Font name="Nyala" size="20.0" />
                </font>
             </Text>
-            <Text layoutX="281.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         И проклят — тронувший мой прах.">
+            <Text layoutX="313.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AND CURSED BE HE WHO MOVES MY BONES.">
                <font>
-                  <Font name="Monotype Corsiva" size="22.0" />
+                  <Font name="Nyala" size="20.0" />
                </font>
             </Text>
             </children>

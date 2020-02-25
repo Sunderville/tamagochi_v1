@@ -10,11 +10,8 @@ public abstract class Pet {
     protected volatile boolean isDead;
     protected volatile long deathMoment;
 
-    protected final int MIN_AGE = 1;
     protected final int MAX_AGE = 20;
-    protected final int MIN_FULLNESS = 0;
     protected final int MAX_FULLNESS = 10;
-    protected final int MIN_HAPPINESS = 0;
     protected final int MAX_HAPPINESS = 20;
     protected final int AGING_STEP = 8;             // in seconds
     protected final int HUNGRINESS_STEP = 5;        // in seconds
@@ -88,24 +85,13 @@ public abstract class Pet {
         this.deathMoment = deathMoment;
     }
 
-    public int getMIN_AGE() {
-        return MIN_AGE;
-    }
 
     public int getMAX_AGE() {
         return MAX_AGE;
     }
 
-    public int getMIN_FULLNESS() {
-        return MIN_FULLNESS;
-    }
-
     public int getMAX_FULLNESS() {
         return MAX_FULLNESS;
-    }
-
-    public int getMIN_HAPPINESS() {
-        return MIN_HAPPINESS;
     }
 
     public int getMAX_HAPPINESS() {
