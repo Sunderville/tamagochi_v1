@@ -1,5 +1,7 @@
 package edu.rom.tamagotchi.domain;
 
+import edu.rom.tamagotchi.config.Config;
+
 public abstract class Pet {
 
     protected volatile long bornMoment;
@@ -10,12 +12,12 @@ public abstract class Pet {
     protected volatile boolean isDead;
     protected volatile long deathMoment;
 
-    protected final int MAX_AGE = 20;
-    protected final int MAX_FULLNESS = 10;
-    protected final int MAX_HAPPINESS = 20;
-    protected final int AGING_STEP = 8;             // in seconds
-    protected final int HUNGRINESS_STEP = 5;        // in seconds
-    protected final int FREEZE_AFTER_DEATH = 60;    // in seconds
+    protected final int MAX_AGE = Integer.parseInt(Config.getProp("maxAge"));
+    protected final int MAX_FULLNESS = Integer.parseInt(Config.getProp("maxFullness"));
+    protected final int MAX_HAPPINESS = Integer.parseInt(Config.getProp("maxHappiness"));
+    protected final int AGING_STEP = Integer.parseInt(Config.getProp("ageIncrementSteps"));
+    protected final int HUNGRINESS_STEP = Integer.parseInt(Config.getProp("hungrinessDecrementSteps"));
+    protected final int FREEZE_AFTER_DEATH = Integer.parseInt(Config.getProp("freezeArterDeath"));
 
     protected Pet() {
     }

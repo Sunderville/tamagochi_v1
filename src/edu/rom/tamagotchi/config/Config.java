@@ -10,7 +10,7 @@ public class Config {
     public static String getProp(String propValue) {
         if (properties.isEmpty()) {
             try (InputStream is = Config.class.getClassLoader()
-                    .getResourceAsStream("Pet_settings.properties")) {
+                    .getResourceAsStream("edu/rom/tamagotchi/Pet_settings.properties")) {
                 if (is != null) {
                     properties.load(is);
                 }

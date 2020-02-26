@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import edu.rom.tamagotchi.config.Config;
 import edu.rom.tamagotchi.domain.Numbers;
 import edu.rom.tamagotchi.domain.Pet;
 import javafx.animation.*;
@@ -38,10 +39,10 @@ class LivingScreenController {
     private LifeCycle lifecycle;
     private Stage stageF;
     private Pet pet;
-    private final double PICTURE_GROWING_RATE = 0.01; // 0.01 = 1%
-    private final int NUMBER_OF_CYCLES = 2;           //
-    private final int WALKING_SPEED = 10;             // in seconds;  more is slower
-    private final int CYCLE_LENGTH = 20;              // in seconds
+    private final double PICTURE_GROWING_RATE = Double.parseDouble(Config.getProp("pictureGrowingRate"));
+    private final int NUMBER_OF_CYCLES = Integer.parseInt(Config.getProp("numberOfCycles"));
+    private final int WALKING_SPEED = Integer.parseInt(Config.getProp("walkingSpeed"));
+    private final int CYCLE_LENGTH = Integer.parseInt(Config.getProp("cycleLength"));
 
     LivingScreenController() {
     }
